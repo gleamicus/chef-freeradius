@@ -27,6 +27,13 @@ when 'debian'
   default['freeradius']['pkgs'] = %w{ freeradius freeradius-common freeradius-utils freeradius-postgresql libdbi-perl libfreeradius2 libnet-daemon-perl libperl5.10 libplrpc-perl libpython2.6 ssl-cert }
   default['freeradius']['ldap_pkgs'] = %w{ freeradius-ldap }
 when 'ubuntu'
+  default['freeradius']['user'] = 'freerad'
+  default['freeradius']['group'] = 'freerad'
+  default['freeradius']['dir'] = '/etc/freeradius'
+  default['freeradius']['service'] = 'freeradius'
+  default['freeradius']['logdir'] = '/var/log/freeradius'
+  default['freeradius']['name'] = 'freeradius'
+  default['freeradius']['libdir'] = '/usr/lib/freeradius'
   default['freeradius']['pkgs'] = %w{ freeradius freeradius-common freeradius-utils libfreeradius2 }
   default['freeradius']['ldap_pkgs'] = %w{ freeradius-ldap }
 else
