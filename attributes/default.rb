@@ -1,5 +1,5 @@
 # OS Specific Attributes
-case platform_family
+case platform
 when 'rhel'
   default['freeradius']['user'] = 'radiusd'
   default['freeradius']['group'] = 'radiusd'
