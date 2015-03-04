@@ -53,6 +53,6 @@ template "#{node['freeradius']['dir']}/sites-available/inner-tunnel" do
 end
 
 service node['freeradius']['service'] do
-  supports :restart => true, :status => false, :reload => false
+  supports :restart => true, :status => false, :reload => true
   action [:enable, :start]
 end

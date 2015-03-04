@@ -14,6 +14,10 @@ node['freeradius']['pkgs'].each do |pkg|
 end
 
 if node['freeradius']['enable_ldap'] == true
+  file '/etc/init/freeradius.conf' do
+    action :delete
+  end
+
   node['freeradius']['ldap_pkgs'].each do |pkg|
     package pkg do
       action :install

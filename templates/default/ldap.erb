@@ -30,12 +30,13 @@ ldap {
   #
   #  Note that this needs to match the name in the LDAP
   #  server certificate, if you're using ldaps.
-  server = "<%=node['freeradius']['ldap_server']%>"
-  port = "<%=node['freeradius']['ldap_port']%>"
+  server = "<%= node['freeradius']['ldap_server'] %>"
+  port = "<%= node['freeradius']['ldap_port'] %>"
   #identity = "cn=admin,o=My Org,c=UA"
   #password = mypass
-  basedn = "<%=node['freeradius']['ldap_basedn']%>"
+  basedn = "<%= node['freeradius']['ldap_basedn'] %>"
   filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
+  filter = "<%= node['freeradius']['ldap_filter'] %>"
   #base_filter = "(objectclass=radiusprofile)"
   set_auth_type = "<%=node['freeradius']['ldap_set_auth_type']%>"
   #  How many connections to keep open to the LDAP server.
@@ -75,7 +76,7 @@ ldap {
     # The StartTLS operation is supposed to be
     # used with normal ldap connections instead of
     # using ldaps (port 689) connections
-    start_tls = no
+    start_tls = <%= node['freeradius']['ldap_start_tls'] %>
 
     # cacertfile  = /path/to/cacert.pem
     # cacertdir   = /path/to/ca/dir/
@@ -90,7 +91,7 @@ ldap {
     #    "demand" (fail if the certificate doesn't verify.)
     #
     # The default is "allow"
-    # require_cert  = "demand"
+    require_cert  = "<%= node['freeradius']['ldap_require_cert'] %>"
   }
 
   # default_profile = "cn=radprofile,ou=dialup,o=My Org,c=UA"

@@ -73,6 +73,9 @@ default['freeradius']['ldap_server'] = 'ldap.example.com'
 default['freeradius']['ldap_port'] = '636'
 default['freeradius']['ldap_basedn'] = 'dc=example,dc=com'
 default['freeradius']['ldap_set_auth_type'] = 'yes'
+default['freeradius']['ldap_start_tls'] = 'no'
+default['freeradius']['ldap_require_cert'] = 'allow'
+default['freeradius']['ldap_filter'] = '(uid=%{%{Stripped-User-Name}:-%{User-Name}})'
 
 # Used for source installation
 default['freeradius']['url'] = "http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/"
