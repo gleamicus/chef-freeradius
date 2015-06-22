@@ -55,7 +55,7 @@ default['freeradius']['db_password'] = "radius"
 default['freeradius']['local_secret'] = "testing1234"
 default['freeradius']['enable_remote_clients'] = true
 default['freeradius']['remote_secret'] = "remote1234"
-default['freeradius']['enable_sql'] = true
+default['freeradius']['enable_sql'] = false
 
 # Client File Config
 default['freeradius']['clients'] = {
